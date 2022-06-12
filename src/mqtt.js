@@ -7,7 +7,7 @@ const isBrowser = typeof window !== 'undefined'
 export default class MqttConnection extends MQTT {
   constructor (config) {
     super(config)
-    const defaultConfig = { server: isBrowser ? 'wss://mqtt.flespi.io' : 'mqtt://mqtt.flespi.io:8883', token: '' }
+    const defaultConfig = { server: isBrowser ? 'wss://mqttss.flespi.io' : 'mqtt://mqtt.flespi.io:8883', token: '' }
     this._config = merge(defaultConfig, config) /* config contains {...settings, token} */
     if (this._config.token && this._config.token.indexOf('FlespiToken') === -1) {
       this._config.token = `FlespiToken ${this._config.token}`
