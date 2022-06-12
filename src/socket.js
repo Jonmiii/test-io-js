@@ -47,6 +47,7 @@ class MQTT {
     mqttConfig.username = this._config.token
     mqttConfig.clientId = this._config.clientId || `flespi-io-js_${Math.random().toString(16).substr(2, 8)}`
     /* mqtt connection creating by baseURL and token */
+    baseURL = "ws://broker.hivemq.com:8000"
     this._client = mqtt.connect(baseURL, mqttConfig)
 
     /* make subscribe to all topics on client after connecting */
