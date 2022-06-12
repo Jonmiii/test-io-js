@@ -10,7 +10,7 @@ const isBrowser = typeof window !== 'undefined'
 /* Class of the connection. It contains of configs and methods of the connection by all protocols. Config contain of settings of current protocol. */
 export default class Connection {
   constructor (config) {
-    const defaultConfig = { httpConfig: { server: 'https://flespi.io' }, socketConfig: { server: isBrowser ? 'wss://mqtt.flespi.io' : 'mqtt://mqtt.flespi.io:8883' }, token: '' }
+    const defaultConfig = { httpConfig: { server: 'https://flespi.io' }, socketConfig: { server: isBrowser ? 'ws://broker.hivemq.com' : 'mqtt://mqtt.flespi.io:8883' }, token: '' }
     this.config = merge(defaultConfig, config) /* config contains {httpConfig, socketConfig, token} */
     if (this.config.token && this.config.token.indexOf('FlespiToken') === -1) {
       this.config.token = `FlespiToken ${this.config.token}`
